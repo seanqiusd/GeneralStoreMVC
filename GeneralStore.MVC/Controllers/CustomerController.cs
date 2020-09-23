@@ -53,6 +53,18 @@ namespace GeneralStore.MVC.Controllers
             return View(customer);
         }
 
+        // POST: Delete
+        // Customer/Delete/{id}
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
+        {
+            Customer customer = _db.Customers.Find(id);
+            _db.Customers.Remove(customer);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
 
 
     }
