@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -32,5 +33,6 @@ namespace GeneralStore.MVC.Models
 
         public DbSet<GeneralStore.MVC.Models.Product> Products { get; set; }
         public DbSet<GeneralStore.MVC.Models.Customer> Customers { get; set; }
+        public DbSet<GeneralStore.MVC.Models.Transaction> Transactions { get; set; }
     }
 }
